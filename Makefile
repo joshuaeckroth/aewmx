@@ -62,7 +62,7 @@ $(GTKOBJ): %.o: %.c
 
 X11LIB = -L$(XROOT)/lib -lX11
 WMLIB = $(X11LIB) $(OPT_WMLIB)
-GTKLIB = `pkg-config --libs gtk+-2.0`
+GTKLIB = $(X11LIB) `pkg-config --libs gtk+-2.0`
 
 $(PLAINBIN): %: %.o
 	$(CC) $^ -o $@
